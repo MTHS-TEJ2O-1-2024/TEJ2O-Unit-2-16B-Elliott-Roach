@@ -22,14 +22,15 @@ input.onButtonPressed(Button.A, function () {
             DigitalPin.P14,
             PingUnit.Centimeters,
         )
+    
+        //sending to close trasmition if 9 cm or closer
+        if (distanceToObject < 87) {
+            basic.showIcon(IconNames.Sad)
+            radio.sendString("To Close")
+            basic.showIcon(IconNames.Happy)
+        }
+        pause(8000)
     })
-
-    //sending to close trasmition if 9 cm or closer
-    if (distanceToObject < 10) {
-        basic.showIcon(IconNames.Sad)
-        radio.sendString("To Close")
-        basic.showIcon(IconNames.Happy)
-    }
 })
 
 //displaying transmition if given
