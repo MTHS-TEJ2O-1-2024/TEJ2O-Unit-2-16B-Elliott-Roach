@@ -28,6 +28,10 @@ input.onButtonPressed(Button.A, function () {
             basic.showIcon(IconNames.Sad)
             radio.sendString("To Close")
             basic.showIcon(IconNames.Happy)
+        } else {
+            basic.showIcon(IconNames.Asleep)
+            pause(1000)
+            basic.showIcon(IconNames.Happy)
         }
         pause(8000)
     })
